@@ -228,7 +228,7 @@ st.button(
 ""
 ""
 
-st.subheader("Units left", divider="red")
+st.subheader("在庫数", divider="red")
 
 need_to_reorder = df[df["units_left"] < df["reorder_point"]].loc[:, "item_name"]
 
@@ -274,7 +274,7 @@ st.caption("NOTE: The :diamonds: location shows the reorder point.")
 
 # -----------------------------------------------------------------------------
 
-st.subheader("Best sellers", divider="orange")
+st.subheader("売れ筋商品", divider="orange")
 
 ""
 ""
