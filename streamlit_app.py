@@ -173,14 +173,14 @@ def update_data(conn, df, changes):
 """
 # 🛍️ Inventory tracker
 
-**Welcome to Alice's Corner Store's intentory tracker!**
-This page reads and writes directly from/to our inventory database.
+**Alice's Corner Store 在庫トラッカーへようこそ！**
+このページから、在庫データベースのデータを直接読み書き（登録・変更）できます。
 """
 
 st.info(
     """
-    Use the table below to add, remove, and edit items.
-    And don't forget to commit your changes when you're done.
+    下の表からアイテムを追加・削除・編集できます。
+    最後に「変更を確定」ボタンを押すのを忘れないでくださいね！
     """
 )
 
@@ -235,7 +235,7 @@ need_to_reorder = df[df["units_left"] < df["reorder_point"]].loc[:, "item_name"]
 if len(need_to_reorder) > 0:
     items = "\n".join(f"* {name}" for name in need_to_reorder)
 
-    st.error(f"We're running dangerously low on the items below:\n {items}")
+    st.error(f"以下の商品が減ってきています。早めの補充が必要です。:\n {items}")
 
 ""
 ""
